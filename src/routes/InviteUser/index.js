@@ -1,13 +1,13 @@
 import { injectReducer } from '../../store/reducers';
-import SignUpUsersContainer from './containers/SignUpUsersContainer';
+import InviteUserContainer from './containers/InviteUserContainer';
 import { isLoggedIn } from '../../routes/index';
 
 export default (store) => ({
-  path: 'signup',
+  path: 'invite',
   onEnter: isLoggedIn,
   getComponent (nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, SignUpUsersContainer)
-    }, 'signup_users')
+      cb(null, InviteUserContainer)
+    }, 'invite_user')
   }
 });

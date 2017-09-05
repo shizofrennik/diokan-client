@@ -6,14 +6,16 @@ import {connect} from 'react-redux';
 import * as common from 'common';
 import {browserHistory} from 'react-router';
 import classNames from 'classnames';
+import {getCurrentUser} from 'store/user';
 
-class SignupEmailForm extends React.Component {
+class SignupUserForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            submitted: false,
             email: '',
-            spinner: false,
-            submitted: false
+            password: '',
+            spinner: false
         };
         this.handleChangeInput = this.handleChangeInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,12 +23,12 @@ class SignupEmailForm extends React.Component {
     }
 
     static propTypes = {
-        submit: PropTypes.func.isRequired
+        auth: PropTypes.instanceOf(AuthService)
     }
 
     handleChangeInput(e){
-        var value = e.target.value;
-        var name = e.target.name;
+        let value = e.target.value;
+        let name = e.target.name;
         this.setState({[name]: value});
     }
 
@@ -38,16 +40,24 @@ class SignupEmailForm extends React.Component {
 
     handleSubmit(){
         this.setState({submitted: true});
-        var isValidEmail = common.validateEmail(this.state.email);
-        if(isValidEmail) {
+        let isValidEmail = common.validateEmail(this.state.email);
+        let isValidPass = common.validatePass(this.state.password);
+        if(isValidEmail && isValidPass) {
             this.setState({spinner: true});
-            this.props.submit(this.state.email);
+            this.props.auth._doRegistration(this.state.email, this.state.password, 'client').then(() => {
+                this.props.getCurrentUser();
+                browserHistory.push('/');
+            }).catch(() => {
+                this.setState({spinner: false});
+            });
         }
     }
 
     render() {
-        var isValidEmail = common.validateEmail(this.state.email);
-        var isEmptyEmail = this.state.email == '';
+        let isValidEmail = common.validateEmail(this.state.email);
+        let isValidPass = common.validatePass(this.state.password);
+        let isEmptyEmail = this.state.email == '';
+        let isEmptyPass = this.state.password == '';
         return (
             <div className="diokan-form diokan-form-client-sign-up">
                 <div className="diokan-form__header">
@@ -75,6 +85,22 @@ class SignupEmailForm extends React.Component {
                             <div className="diokan-form-error">Please enter a valid email address.</div>
                         }
                     </div>
+                    <div className="diokan-form-group">
+                        <input
+                          type="password"
+                          name="password"
+                          className={classNames('diokan-form-control', { 'diokan-form-control__has-error' : this.state.submitted && (isEmptyPass || !isValidPass) })}
+                          placeholder="Password"
+                          value={this.state.password}
+                          onChange={this.handleChangeInput}
+                        />
+                        {this.state.submitted && isEmptyPass &&
+                        <div className="diokan-form-error">Password can't be blank.</div>
+                        }
+                        {this.state.submitted && !isValidPass && !isEmptyPass &&
+                        <div className="diokan-form-error">Password must be at least 8 characters.</div>
+                        }
+                    </div>
                 </div>
                 <button className="diokan-btn diokan-btn-form-action" onClick={this.handleSubmit}>
                     {!this.state.spinner && <span className="btn-primary__text">Continue</span>}
@@ -85,4 +111,15 @@ class SignupEmailForm extends React.Component {
     }
 }
 
-export default SignupEmailForm;
+const mapStateToProps = (state, props) => {
+    return ({
+    })
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        getCurrentUser
+    }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupUserForm)

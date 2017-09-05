@@ -24,7 +24,7 @@ class Header extends React.Component {
                                         </button>
                                     </Link>
                                 </div>
-                                <Link to="/photographers/signup">
+                                <Link to="/signup">
                                     <button className="diokan-btn diokan-btn-primary">
                                         Sign Up
                                     </button>

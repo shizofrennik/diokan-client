@@ -4,8 +4,8 @@ import Dashboard from './Dashboard';
 import Settings from './Settings';
 import LoginRoute from './Login';
 import ForgotPasswordRoute from './ForgotPassword';
-import SignUpPhotographersRoute from './SignupPhotographers';
 import SignUpUsersRoute from './SignupUsers';
+import InviteUserRoute from './InviteUser';
 import DashboardLayout from '../layouts/DashboardLayout';
 import BaseLayout from '../layouts/BaseLayout';
 import Billing from './Billing';
@@ -46,8 +46,8 @@ export const createRoutes = (store) => (
         auth        : auth,
         childRoutes : [
           LoginRoute(store),
-          SignUpPhotographersRoute(store),
           SignUpUsersRoute(store),
+          InviteUserRoute(store),
           ForgotPasswordRoute(store)
         ]
       }
