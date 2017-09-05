@@ -1,0 +1,51 @@
+$block: diokan-header;
+
+.#{$block}{
+  background: $color;
+  height: 90px;
+  z-index: 1;
+  @extend .flexbox;
+  @extend .align-center;
+  &-inner{
+    width: 100%;
+    @extend .flexbox;
+    @extend .justify-between;
+    @extend .align-center;
+    padding: 0 30px;
+  }
+  &__logo{
+    @extend .flexbox;
+    max-width: 180px;
+    &-image{
+      *{
+        max-width: 180px;
+        height: 100%;
+      }
+    }
+    &-text{
+      white-space: nowrap;
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 300;
+      color: $color2;
+    }
+  }
+  &__action-group{
+    @extend .flexbox;
+    @extend .align-center;
+    &-inner{
+      margin-right: 30px;
+    }
+    &_photographers{
+      .diokan-header__action-group-inner{
+        margin-right: 0;
+        margin-left: 28px;
+      }
+    }
+  }
+  svg{
+    *{
+      fill: #12A3E1;
+    }
+  }
+}

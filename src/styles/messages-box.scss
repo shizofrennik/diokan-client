@@ -1,0 +1,25 @@
+$block: diokan-messages-box;
+
+.#{$block}{
+  position: relative;
+  font-size: 18px;
+  color: $color15;
+  background: none;
+  border:0;
+  padding: 0;
+  &:before{
+    content: attr(data-message-count);
+    position: absolute;
+    right: -5px;
+    top: -3px;
+    @extend .flexbox;
+    @extend .justify-center;
+    @extend .align-center;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    font-size: 11px;
+    color: $color;
+    background: $color1;
+  }
+}

@@ -1,0 +1,21 @@
+$block: diokan-user-box;
+
+.#{$block}{
+  position: relative;
+  &__logo{
+    font-size: 44px;
+    line-height: 1;
+    color: $color15;
+    cursor: pointer;
+    text-align: center;
+  }
+  &__name{
+    font-size: 14px;
+    color: $color;
+    text-align: center;
+    cursor: pointer;
+  }
+  &:focus{
+    outline: none;
+  }
+}

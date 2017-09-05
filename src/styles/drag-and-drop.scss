@@ -1,0 +1,90 @@
+$block: diokan-drag-box;
+
+
+.#{$block} {
+  padding: 28px 0;
+  border-radius: 5px;
+  background-color: $color;
+  border: dashed 1px $color11;
+  text-align: center;
+  &__complete{
+    display: none;
+  }
+  &__progress{
+    display: none;
+  }
+  &__notification{
+    margin-bottom: 18px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    color:$color2;
+  }
+  &__icon{
+    @extend .flexbox;
+    @extend .justify-center;
+    margin-bottom: 5px;
+    font-size: 48px;
+    line-height: 1;
+    text-align: left;
+    color: #12a3e1;
+  }
+  &__note{
+    font-size: 24px;
+    font-weight: 300;
+    color: $color2;
+    &_secondary{
+      margin-bottom: 13px;
+      font-size: 18px;
+      font-weight: 300;
+      color: $color5;
+    }
+  }
+  &__state{
+    @extend .flexbox;
+    @extend .align-center;
+    @extend .justify-center;
+    margin-bottom: 4px;
+    font-size: 18px;
+    line-height: 1.33;
+    color: $color2;
+  }
+  &.#{$block}{
+   &__state-complete{
+     padding: 36px 30px 34px;
+     background: $color13;
+     border: none;
+     & > *:not(.diokan-drag-box__complete){
+       display: none;
+     }
+     .#{$block}{
+       &__complete{
+         display: block;
+       }
+       &__icon{
+         margin: 0 6px 0 0;
+         font-size: 36px;
+         color: $color12;
+       }
+     }
+     .diokan-btn-primary{
+       padding: 15px 50px 14px;
+     }
+   }
+    &__state-progress{
+      @extend .flexbox;
+      @extend .justify-center;
+      & > *:not(.diokan-drag-box__progress){
+        display: none;
+      }
+      .#{$block}{
+        &__progress{
+          display: block;
+        }
+      }
+      .diokan-progress-bar{
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+$block: diokan-tab;
+
+
+.#{$block} {
+  margin-bottom: 24px;
+  &-pane{
+    display: none;
+      &.active{
+        display: block;
+      }
+  }
+  &-nav{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    &-wrap{
+      margin: 0 0 30px 0;
+    }
+    .diokan-tab-nav__item{
+      &-link{
+        padding: 0;
+        position: relative;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 0.92;
+        color: $color5;
+        cursor: pointer;
+        &:hover,
+        &:focus,
+        &:active{
+          outline: none;
+          color: $color2;
+          text-decoration: none;
+        }
+      }
+    }
+    &__item{
+      margin: 0 52px 0 0;
+      list-style: none;
+      &.react-tabs__tab--selected{
+        .diokan-tab-nav__item-link{
+          &:after{
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: -2px;
+            right: -1px;
+            height: 3px;
+            background: $color6;
+          }
+          color: $color2;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

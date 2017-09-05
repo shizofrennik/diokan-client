@@ -1,0 +1,79 @@
+$block: diokan-payment-info;
+
+
+.#{$block} {
+  &-card{
+    @extend .diokan-content-block;
+    @extend .flexbox;
+    @extend .align-center;
+    margin-bottom: 30px;
+    padding: 42px 30px 36px;
+    cursor: pointer;
+    &:hover{
+      box-shadow: 0 2px 19px 0 rgba(10, 45, 61, 0.21);
+
+      .#{$block} {
+        &-card{
+          &__icon{
+            position: relative;
+            z-index: 1;
+            &:after {
+              content: "\f058";
+              position: absolute;
+              right: -5px;
+              bottom: -4px;
+              font: normal normal normal 14px/1 FontAwesome;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              font-size: 24px;
+              color: $color12;
+            }
+          }
+        }
+      }
+    }
+    &__icon{
+      @extend .flexbox;
+      @extend .align-center;
+      @extend .justify-center;
+      width: 72px;
+      height: 72px;
+      margin-right: 18px;
+      border: solid 1px $color3;
+      border-radius: 50%;
+      font-size: 32px;
+      text-align: center;
+      color: $color1;
+      &--active{
+        position: relative;
+        z-index: 1;
+        &:after{
+          content: "\f058";
+          position: absolute;
+          right: -5px;
+          bottom: -4px;
+          font: normal normal normal 14px/1 FontAwesome;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-size: 24px;
+          color: $color12;
+        }
+      }
+    }
+    &__title{
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 0.96;
+      color: $color2;
+    }
+    &__remark{
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.28;
+      color: $color5;
+    }
+  }
+}

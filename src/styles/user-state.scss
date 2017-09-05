@@ -1,0 +1,15 @@
+$block: diokan-user-state;
+
+.#{$block}{
+  margin-bottom: 77px;
+  &__name{
+    font-size: 14px;
+    color: $color;
+    font-weight: 300;
+  }
+  &__current{
+    font-size: 14px;
+    color: $color12;
+    font-weight: 300;
+  }
+}

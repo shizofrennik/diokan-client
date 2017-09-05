@@ -1,0 +1,40 @@
+$block: diokan-info;
+
+.#{$block} {
+  margin-bottom: 83px;
+  &__header{
+    padding-right: 18px;
+    margin-bottom: 63px;
+    text-align: center;
+    .diokan-title-primary{
+      margin-bottom: 7px;
+    }
+  }
+  &-list{
+    margin-bottom: 81px;
+    &__item{
+      @extend .flexbox;
+      @extend .align-center;
+      margin-bottom: 42px;
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+      &-description{
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.4;
+        color: $color2;
+        p{
+          margin: 0;
+        }
+      }
+      &-icon{
+        @extend .flexbox;
+        min-width: 62px;
+        margin-right: 30px;
+        color: $color1;
+        font-size: 48px;
+      }
+    }
+  }
+}

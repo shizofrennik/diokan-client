@@ -1,0 +1,62 @@
+$block: diokan-side-tabs;
+
+.#{$block}{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  @extend .flexbox;
+  @extend .align-center;
+  flex-flow: row wrap;
+  &__item{
+    @extend .flexbox;
+    @extend .justify-center;
+    flex:0 0 100%;
+    &.active{
+      background: $color1;
+      color: $color;
+      transition: color 0.1s;
+      text-decoration: none;
+      .#{$block}{
+        &__item{
+          &-link{
+            color: $color;
+            text-decoration: none;
+          }
+          &-icon{
+            color: $color;
+            transition: color 0s;
+            i{
+              color: $color;
+              transition: color 0.1s;
+            }
+          }
+        }
+      }
+
+    }
+    &-link{
+      @extend .flexbox;
+      @extend .align-center;
+      flex:0 0 100%;
+      flex-flow: column nowrap;
+      padding: 20px 0;
+      color: $color15;
+      font-size: 14px;
+      transition: color 0.1s;
+      &.active,
+      &:hover,
+      &:active,
+      &:focus{
+        @extend .diokan-side-tabs__item.active;
+      }
+    }
+    &-icon{
+      font-size: 26px;
+      color: $color15;
+      transition: color 0s;
+      i{
+        transition: color 0.1s;
+      }
+    }
+  }
+}

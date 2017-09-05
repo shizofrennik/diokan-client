@@ -1,0 +1,34 @@
+$block: diokan-list;
+
+.#{$block} {
+  margin: 0;
+  padding: 0;
+  &__item{
+    list-style: none;
+    @extend .flexbox;
+    @extend .align-center;
+    margin-bottom: 16px;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+    &-icon{
+      @extend .flexbox;
+      @extend .align-center;
+      @extend .justify-center;
+      width: 21px;
+      height: 21px;
+      padding-top: 1px;
+      margin-right: 10px;
+      border-radius:50%;
+      border: solid 1px $color17;
+      font-size: 14px;
+      color: $color1;
+    }
+    &-text{
+      @extend .diokan-content-text;
+      &_colored{
+        color: $color5;
+      }
+    }
+  }
+}

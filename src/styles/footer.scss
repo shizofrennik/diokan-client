@@ -1,0 +1,28 @@
+$block: diokan-footer;
+
+
+.#{$block} {
+  padding-bottom: 44px;
+  &-top{
+    @extend .flexbox;
+    @extend .justify-center;
+    margin-bottom: 26px;
+  }
+  &-bottom{
+    @extend .flexbox;
+    @extend .justify-center;
+  }
+  &-menu{
+    @extend .flexbox;
+    margin: 0;
+    padding: 0;
+    &__item{
+      margin-right: 30px;
+      list-style: none;
+      &-link{
+        font-size: 16px;
+        color: $color2;
+      }
+    }
+  }
+}

@@ -1,0 +1,198 @@
+$block: dropdown;
+
+.#{$block} {
+  position: relative;
+  .caret{
+    width: auto;
+    margin-left: 6px;
+    border: none;
+    font-size: 13px;
+    color: $color5;
+    &:before{
+      content: "\f078";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    &.#{$block}{
+      &-caret{
+        &__right{
+          display:inline-block;
+          transform: rotate(-90deg);
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+  &.open{
+    .diokan-btn.#{$block}-toggle{
+      box-shadow: none;
+      background-color: transparent;
+      border: none;
+      font-size: 14px;
+      color: #78909c;
+    }
+  }
+  .#{$block}-toggle{
+      display: flex;
+      padding: 0;
+      background: transparent;
+      font-size: 14px;
+      color: $color5;
+      &.#{$block}{
+        &-toggle{
+          &__user-state{
+            color: $color12;
+          }
+        }
+      }
+    }
+  &-panel{
+    &__intro{
+      @extend .flexbox;
+      @extend .justify-center;
+      padding-bottom: 16px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      font-weight: 300;
+      color: $color5;
+      border-bottom: solid 1px #cbd1d5;
+      &-icon{
+        margin-right: 5px;
+        color: $color12;
+      }
+    }
+
+    &.#{$block}-panel{
+      &__corner-left{
+        &:before{
+          content: '';
+          position: absolute;
+          top:15px;
+          left: -3px;
+          border-style: solid;
+          border-width: 6px 6px 6px 0;
+          border-color: transparent $color transparent  transparent;
+          z-index: 2;
+        }
+        &:after{
+          content: '';
+          position: absolute;
+          top:15px;
+          left: -4px;
+          border-style: solid;
+          border-width: 6px 6px 6px 0;
+          border-color: transparent rgba(0, 0, 0, 0.13) transparent transparent;
+          z-index: 1;
+        }
+      }
+    }
+    &__intro{
+
+    }
+  }
+  &-menu{
+    right: 0;
+    left: inherit;
+    width: 125px;
+    min-width: 125px;
+    padding: 22px 19px 9px 12px;
+    margin: 5px 0 0 0;
+    background: $color;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    z-index: 1;
+    &__intro{
+      @extend .flexbox;
+      @extend .justify-center;
+      padding-bottom: 16px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      font-weight: 300;
+      color: $color5;
+      border-bottom: solid 1px #cbd1d5;
+      &-icon{
+        margin-right: 5px;
+        color: $color12;
+      }
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      top:-6px;
+      left: 50%;
+      margin-left: -3px;
+      border-style: solid;
+      border-width: 0 6px 6px 6px;
+      border-color: transparent transparent $color transparent;
+      z-index: 2;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top:-7px;
+      left: 50%;
+      margin-left: -3px;
+      border-style: solid;
+      border-width: 0 6px 6px 6px;
+      border-color: transparent transparent rgba(0, 0, 0, 0.13) transparent;
+      z-index: 1;
+    }
+    .dropdown-menu__item{
+      position: relative;
+      list-style: none;
+      padding-left: 23px;
+      &.#{$block} {
+        &-menu{
+          &__item{
+            &_active{
+              &:before{
+                content: "\f00c";
+                position: absolute;
+                top:0;
+                left:0;
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-size: 14px;
+                line-height: 2.21;
+                color: $color6;
+              }
+            }
+          }
+        }
+      }
+      a{
+        padding: 0;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 2.21;
+        color: $color2;
+        &:hover,
+        &:focus,
+        &:active{
+          text-decoration: none;
+          outline: none;
+          background: transparent
+        }
+      }
+    }
+  }
+  &__sidebar{
+    .diokan-dropdown-panel{
+      margin: 0;
+      padding: 22px 26px 20px 24px;
+      width: 173px;
+      top:-100%;
+      left:190px;
+    }
+    .diokan-dropdown-menu{
+      padding-left: 3px;
+    }
+  }
+}

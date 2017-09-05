@@ -1,0 +1,19 @@
+$block: diokan-balance-box;
+
+.#{$block}{
+  @extend .flexbox;
+  @extend .align-end;
+  flex-flow: column nowrap;
+  &__title{
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 300;
+    color: $color5;
+  }
+  &__count{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    color: $color2;
+  }
+}

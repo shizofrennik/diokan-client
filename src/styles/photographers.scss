@@ -1,0 +1,17 @@
+$block: diokan-photographers;
+
+.#{$block} {
+  &__intro{
+    @extend .flexbox;
+    @extend .align-center;
+    @extend .justify-between;
+    margin-bottom: 20px;
+    &-group{
+      @extend .flexbox;
+      @extend .align-center;
+    }
+  }
+  &__content{
+
+  }
+}

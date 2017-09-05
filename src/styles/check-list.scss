@@ -1,0 +1,53 @@
+$block: diokan-check-list;
+
+.#{$block} {
+  height: 100%;
+  @extend .diokan-content-block;
+  padding: 21px 20px 32px 29px;
+  .diokan-custom-input__checkbox{
+    width: 22px;
+    height: 22px;
+    margin-right: 11px;
+  }
+  &__header{
+    margin-bottom: 28px;
+  }
+  &__item{
+    margin-bottom: 19px;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+    &-title{
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 400;
+      color: $color2;
+      &-wrap{
+        margin-bottom: 1px;
+      }
+    }
+    &-description{
+      padding-left: 33px;
+      margin-bottom: 16px;
+      p{
+        margin-bottom: 23px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.44;
+        color: $color2;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &__action-group{
+    padding-left: 36px;
+  }
+  .diokan-link{
+    margin-right: 13px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}

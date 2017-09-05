@@ -1,0 +1,50 @@
+$block: diokan-side-menu;
+
+.#{$block}{
+  padding: 0;
+  margin: 0;
+  &__item{
+    list-style: none;
+    margin-bottom: 26px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &-link{
+      font-size: 14px;
+      transition: color 0.1s;
+      &:hover, &-active{
+        background: $color1;
+        color: $color;
+        transition: color 0.1s;
+        text-decoration: none;
+        .#{$block}{
+          &__item{
+            &-icon{
+              color: $color;
+              transition: color 0s;
+              i{
+                color: $color;
+                transition: color 0.1s;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-icon{
+      font-size: 26px;
+      color: $color15;
+      font-weight: 300;
+      &:hover,
+      &:focus,
+      &:active{
+        text-decoration: none;
+        outline:none;
+        color: $color1;
+      }
+      &.active{
+        color: $color1;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+$block: diokan-main;
+
+.#{$block} {
+  position: relative;
+  margin-left: 120px;
+  &.sidebar-opened{
+    margin-left: 330px;
+  }
+  &-inner{
+    position: relative;
+    padding: 8px 30px 30px;
+    &.#{$block} {
+      &-inner{
+        &__portfolio{
+          padding: 40px;
+        }
+        &__settings{
+          padding: 34px 30px 30px;
+        }
+        &__side-menu{
+          margin-left: 210px;
+        }
+        &__photographers{
+          padding: 23px 30px 30px;
+        }
+        &__sessions{
+          padding: 20px 30px 20px;
+        }
+      }
+    }
+  }
+  &__filter{
+    @extend .flexbox;
+    @extend .justify-end;
+    margin-bottom:5px;
+  }
+}

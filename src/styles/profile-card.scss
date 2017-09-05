@@ -1,0 +1,75 @@
+$block: diokan-profile;
+
+.#{$block} {
+  &-card{
+    @extend .diokan-content-block;
+    padding: 21px 31px ;
+    height: 100%;
+    &-inner{
+
+    }
+    &-intro{
+      @extend .flexbox;
+      margin-bottom: 7px;
+    }
+    &__logo{
+      width: 100px;
+      height: 100px;
+      @extend .flexbox;
+      @extend .align-center;
+      @extend .justify-center;
+      font-size: 100px;
+      color: $color18;
+    }
+    &__info{
+      flex:1 0 auto;
+      margin-right: 31px;
+      padding-top: 26px;
+    }
+    &__list{
+      margin-bottom: 28px;
+    }
+    &__link{
+      margin-bottom: 15px;
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+      &-group{
+        margin-bottom: 35px;
+      }
+    }
+  }
+  &-statistic{
+    &__item{
+      @extend .flexbox;
+      @extend .align-center;
+      @extend .justify-between;
+      &-group{
+        @extend .flexbox;
+        @extend .align-center;
+      }
+      &-icon{
+        @extend .flexbox;
+        @extend .align-center;
+        @extend .justify-center;
+        width: 43px;
+        height: 43px;
+        margin-right: 11px;
+        border-radius: 50%;
+        border: solid 1px $color3;
+        font-size: 20px;
+        color: $color1;
+      }
+      &-title{
+        font-size: 16px;
+        font-weight: 300;
+        color: $color5;
+      }
+      &-value{
+        font-size: 36px;
+        font-weight: 300;
+        color: $color2;
+      }
+    }
+  }
+}

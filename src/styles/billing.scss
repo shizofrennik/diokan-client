@@ -1,0 +1,11 @@
+$block: diokan-billing;
+
+
+.#{$block} {
+    &-intro{
+        margin-bottom:35px;
+    }
+    &-header{
+        margin-bottom:17px;
+    }
+}

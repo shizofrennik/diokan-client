@@ -1,0 +1,40 @@
+$block: diokan-state;
+
+
+.#{$block} {
+  &__unapproved{
+    *{
+      color: $color21 !important;
+    }
+    color: $color21;
+  }
+  &__waiting{
+    color: $color6 !important;
+  }
+  &__approved{
+    color:$color12 !important;
+  }
+  &__blocked{
+    color: $color22;
+  }
+  &__deleted{
+    color: $color23;
+  }
+  &-box{
+    @extend .flexbox;
+    @extend .align-center;
+    &-header{
+      margin-right: 9px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.38;
+      color: $color5;
+    }
+    &-description{
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.1;
+      color: $color5;
+    }
+  }
+}

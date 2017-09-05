@@ -1,0 +1,35 @@
+$block: ".diokan-sessions";
+
+#{$block}{
+    &-intro{
+        margin-bottom: 20px;
+        &-group{
+            @extend .flexbox;
+            @extend .align-center;
+            @extend .justify-between;
+            .diokan-btn-default,
+            .diokan-btn-primary{
+                width: 218px;
+                font-size: 18px;
+                font-weight: 500;
+                text-decoration: none;
+                color: $color;
+                text-align: center;
+            }
+            .diokan-btn-default{
+                margin-right: 10px;
+                color: #78909c;
+            }
+        }
+    }
+    &-info{
+        margin-bottom: 30px;
+        padding: 28px 28px 24px 29px;
+        @extend .diokan-content-block;
+    }
+    &-state{
+        @extend .flexbox;
+        @extend .justify-end;
+        padding-top: 7px;
+    }
+}

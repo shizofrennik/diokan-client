@@ -1,0 +1,33 @@
+$block: diokan-clear-page;
+
+.#{$block} {
+  @extend .flexbox;
+  @extend .align-center;
+  @extend .justify-center;
+  padding: 220px 0 0 ;
+  &__inner{
+
+  }
+  &__logo{
+    @extend .flexbox;
+    @extend .align-center;
+    @extend .justify-center;
+    margin-bottom: 29px;
+  }
+  &__message{
+    margin-bottom: 25px;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.44;
+    text-align: center;
+    color: $color2;
+  }
+  &__action{
+    @extend .flexbox;
+    @extend .align-center;
+    @extend .justify-center;
+    .diokan-btn-primary {
+      font-size: 18px;
+    }
+  }
+}

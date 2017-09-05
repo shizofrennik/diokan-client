@@ -1,0 +1,409 @@
+$block: diokan-form;
+
+.#{$block} {
+  position: relative;
+  width: 480px;
+  padding: 60px;
+  background: $color;
+  border-radius: 4px;
+  &-group{
+    margin-bottom: 20px;
+    &-box{
+      margin-bottom: 30px;
+    }
+    &__double{
+      .#{$block}{
+        &-control{
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  &-help-group{
+    &__inline{
+      @extend .flexbox;
+      @extend .justify-between;
+      @extend .align-center;
+    }
+  }
+  &-control{
+    display: block;
+    width: 100%;
+    height: 48px;
+    padding: 14px 15px 12px;
+    background: $color4;
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: left;
+    color: $color5;
+    font-family: "Rubik", sans-serif;
+    cursor: pointer;
+    &:focus,
+    &:active{
+      outline: none;
+    }
+    &-select{
+      appearance:none;
+      -moz-appearance:none;
+      -webkit-appearance:none;
+      background-image: url('./images/select-arrow.png');
+      background-repeat: no-repeat;
+      background-color: $color4;
+      background-position-y: 50%;
+      background-position-x: 96%;
+      &.#{$block} {
+        &-control{
+          &-select{
+            &__light-theme{
+              background-color: $color;
+            }
+          }
+        }
+      }
+    }
+    &-wrap{
+      position: relative;
+      width: 100%;
+      &:before{
+        content: '';
+        width: 53px;
+        @extend .flexbox;
+        @extend .align-center;
+        @extend .justify-center;
+        position: absolute;
+        left:0;
+        top: 0;
+        bottom: 0;
+        font-size: 24px;
+        line-height: 1;
+        color: $color;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius:4px;
+      }
+      .#{$block}-control{
+        padding-left: 71px;
+        font-family: $font-primary;
+      }
+    }
+    &__has-error {
+      border: solid 1px #fc5959;
+    }
+  }
+  &-error{
+    font-size: 14px;
+    text-align: left;
+    padding: 4px 0px;
+    color: #f34048;
+  }
+  &-label{
+    font-size: 14px;
+    line-height: 13px;
+    text-align: left;
+    color: $color5;
+    font-weight: 400;
+  }
+  &__helper{
+    font-size: 14px;
+    text-align: center;
+    color: $color5;
+  }
+  &__header{
+    margin:0 0 41px 0;
+    text-align: center;
+    &-group{
+      @extend .flexbox;
+      @extend .align-center;
+      @extend .justify-between;
+      margin-bottom: 28px;
+      .diokan-form__header{
+        margin-bottom: 0;
+      }
+    }
+    &-link{
+
+    }
+  }
+  &__inline{
+    .#{$block} {
+      &-group{
+        display: inline-block;
+      }
+    }
+  }
+  &__description{
+    margin-bottom: 22px;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 300;
+    text-align: center;
+    color: $color5;
+  }
+  &__action-group{
+    @extend .flexbox;
+    @extend .align-center;
+    @extend .justify-center;
+    .diokan-btn{
+      flex:0 0 50%;
+      margin-right: 10px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  &__delimiter{
+    @extend .flexbox;
+    @extend .align-center;
+    @extend .justify-center;
+    position: relative;
+    margin: 15px 0 14px;
+    &:before{
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 50%;
+      margin-top: -1px;
+      display: block;
+      height: 2px;
+      background: rgba(120, 144, 156, 0.5);
+      opacity: 0.35;
+    }
+    &-text{
+      display: block;
+      position: relative;
+      z-index: 1;
+      padding: 0 20px;
+      background: $color;
+      font-size: 16px;
+      font-weight: 300;
+      color: $color5;
+    }
+  }
+
+  &-login{
+    width: 550px;
+  }
+
+  &-social-entry{
+    .#{$block} {
+      &-group{
+        margin-bottom: 10px;
+        &:last-of-type{
+          margin-bottom: 0;
+        }
+      }
+      &-control{
+        font-size: 16px;
+        background: $color;
+        border: solid 1px rgba(120, 144, 156, 0.27);
+      }
+    }
+    &.#{$block} {
+      &-social-entry{
+        &__gap-bottom{
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  &-action{
+    width: 650px;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 5px;
+    background: $color;
+    position: relative;
+    .#{$block}-action{
+      &__header{
+        padding: 60px 0 24px;
+        text-align: center;
+        background: $color3;
+        border-radius: 5px 5px 0 0;
+      }
+      &__body{
+        padding: 55px 88px 60px;
+        text-align: center;
+      }
+      &__description{
+        margin-bottom: 30px;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.38;
+        text-align: center;
+        color: $color2;
+        &_big{
+          text-align: center;
+          font-size: 24px;
+          font-weight: 300;
+          color: $color2;
+        }
+        p{
+          margin: 0 0 23px 0;
+          &:last-of-type{
+            margin: 0;
+          }
+        }
+      }
+    }
+    &.#{$block}-action__modal{
+      background: none;
+      position: absolute;
+    }
+    &.#{$block}-action__submit{
+      .#{$block}-action{
+        &__body{
+          padding: 49px 100px 60px;
+          margin-bottom: 26px;
+        }
+        &__description{
+          margin-bottom: 26px;
+          font-size: 24px;
+          line-height: 1.24;
+        }
+      }
+      .#{$block}{
+        &__description{
+          margin-bottom: 31px;
+        }
+      }
+    }
+    &.#{$block}-action__delete{
+      padding-bottom: 56px;
+      .#{$block}-action{
+        &__body{
+          padding: 49px 150px 0;
+          margin-bottom: 33px;
+        }
+        &__description{
+          font-size: 24px;
+          line-height: 1.24;
+        }
+      }
+      .#{$block}{
+        &__action-group{
+          .diokan-btn{
+            flex:0 0 218px;
+            width: 218px;
+          }
+        }
+      }
+    }
+  }
+
+  &.#{$block} {
+    &-settings{
+      @extend .diokan-content-block;
+      width: 100%;
+      padding: 40px 30px 40px 30px;
+      margin-bottom: 30px;
+      .diokan-form-control{
+        color: $color2;
+        &::-webkit-input-placeholder       {font-size: 18px;color: $color2;}
+        &::-moz-placeholder                {font-size: 18px;color: $color2;}
+        &:-moz-placeholder                 {font-size: 18px;color: $color2;}
+        &:-ms-input-placeholder            {font-size: 18px;color: $color2;}
+        &.diokan-placeholder-light{
+          &::-webkit-input-placeholder       {color:$color5;}
+          &::-moz-placeholder                {color:$color5;}
+          &:-moz-placeholder                 {color:$color5;}
+          &:-ms-input-placeholder            {color:$color5;}
+        }
+      }
+      .#{$block}{
+        &-label{
+          margin-bottom: 9px;
+          font-size: 16px;
+        }
+        &-group{
+          margin-bottom: 27px;
+          &.diokan-form-group__nogap{
+            margin-bottom: 0;
+          }
+        }
+        &__header{
+          font-size: 24px;
+          font-weight: 300;
+          line-height: 0.96;
+          text-align: left;
+          color: $color2;
+        }
+      }
+    }
+    &-sign-up {
+      width: 540px;
+      .#{$block} {
+        &-group{
+          margin-bottom: 10px;
+        }
+      }
+    }
+    &-client-sign-up{
+      width: 540px;
+      margin: 0 auto;
+      .#{$block} {
+        &-group{
+          margin-bottom: 15px;
+          &-box{
+            margin-bottom: 15px;
+          }
+        }
+        &__header{
+          margin-bottom: 26px;
+        }
+      }
+    }
+    &-notifications{
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    &-session{
+      @extend .diokan-content-block;
+      width: 100%;
+      padding: 26px 29px 33px 30px;
+      .row{
+        margin-left: -10px;
+        margin-right:-10px;
+        [class*="col-"]{
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        &:last-child{
+          .diokan-form-group{
+            margin-bottom: 0;
+          }
+        }
+      }
+      .diokan-form-group{
+        margin-bottom: 25px;
+      }
+      .diokan-form-session-action{
+        padding-top: 30px;
+      }
+      .diokan-form-control{
+        border: 2px solid transparent;
+        &.diokan-form-control__date{
+          padding-right: 50px;
+          position: relative;
+        }
+        &:focus{
+          border: 2px solid $color1;
+        }
+      }
+    }
+  }
+  &__error {
+    display: inline-block;
+    margin-top: 5px;
+    color: $color23;
+  }
+  &__warning {
+    display: inline-block;
+    margin-top: 5px;
+    color: $color22;
+  }
+
+}

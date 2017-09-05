@@ -1,0 +1,33 @@
+$block: diokan-entry-page;
+
+.#{$block} {
+  @extend .flexbox;
+  @extend .justify-center;
+  padding: 82px 0 64px;
+  &-wrap{
+    @extend .flexbox;
+    flex-direction: column;
+    @extend .justify-between;
+  }
+  &__inner{
+    @extend .flexbox;
+    &-left{
+      margin-right: 95px;
+    }
+    &-right{
+      padding-top: 59px;
+    }
+  }
+  &-helper{
+    margin-top: 26px;
+    .diokan-helper{
+      margin-bottom: 19px;
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+      &-message{
+        font-size: 18px;
+      }
+    }
+  }
+}

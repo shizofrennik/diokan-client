@@ -1,0 +1,43 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$zindex-modal-background: 10;
+$container-lg: 1460px;
+$container-md: 1460px;
+$container-sm: 1460px;
+$font-size-base: 14px;
+$input-height: 15px;
+//$screen-md-min: 320px;
+
+$font-primary: 'Rubik', sans-serif;
+$font-secondary: 'Raleway', sans-serif;
+
+$color: #ffffff;
+$color1: #12a3e1;
+$color2: #1b2733;
+$color3: #e9eef1;
+$color4: #eff2f4;
+$color5: #78909c;
+$color6: #0888e2;
+$color8: #36549d;
+$color9: #46a9e3;
+$color10: #e04a39;
+$color11: #4c5b62;
+$color12: #27c893;
+$color13: #f4f7f8;
+$color14: #ced4e0;
+$color15: #7c8990;
+$color16: #fc5959;
+$color17: #cbd1d5;
+$color18: #dae2e6;
+$color19: #dbe1e5;
+$color20: #1f2c32;
+$color21: #8c96a9;
+$color22: #ff6b16;
+$color23: #f34048;
+$color24: #2d3945;
+$color25: #233343;
+
+@media screen and (max-width: 1439px){
+    .container{
+        width: 100% !important;
+    }
+}

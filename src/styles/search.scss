@@ -1,0 +1,44 @@
+$block: diokan-search;
+
+.#{$block} {
+  &-box{
+    position: relative;
+    margin-right: 27px;
+    .diokan-btn-search{
+      position: absolute;
+      left: 16px;
+      top: 14px;
+    }
+  }
+  &-field{
+    width: 307px;
+    height: 42px;
+    padding-left: 38px;
+    border-radius: 100px;
+    background-color: $color;
+    box-shadow: none;
+    border:none;
+    font-size: 16px;
+    font-weight: 300;
+    color: $color21;
+    &:focus,
+    &:active{
+      outline: none;
+    }
+    &::-webkit-input-placeholder       {color:$color21; font-size: 16px; font-weight: 300;}
+    &::-moz-placeholder                {color:$color21; font-size: 16px; font-weight: 300;}
+    &:-moz-placeholder                 {color:$color21; font-size: 16px; font-weight: 300;}
+    &:-ms-input-placeholder            {color:$color21; font-size: 16px; font-weight: 300;}
+  }
+}
+
+.diokan-btn-search{
+  @extend .flexbox;
+  padding: 0;
+  background: transparent;
+  opacity: 0.48;
+  font-size: 14px;
+  line-height: 1;
+  text-align: left;
+  color: $color15;
+}

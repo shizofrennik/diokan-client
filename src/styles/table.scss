@@ -1,0 +1,210 @@
+$block: diokan-table;
+
+.#{$block} {
+  border-radius: 5px;
+  background-color: $color;
+  &__header{
+    border-bottom: solid 2px rgba(140, 150, 169, 0.52);
+    .#{$block}{
+      &__row{
+        height: 53px;
+      }
+      &__cell{
+        padding-top: 5px;
+        font-size: 14px;
+        line-height: 1;
+        color: $color5;
+      }
+    }
+  }
+  &__body{
+    .#{$block} {
+      &__row {
+        height: 56px;
+        border-bottom: solid 1px #eaedef;
+        text-decoration: none;
+        &:last-child{
+          border: none;
+        }
+      }
+      &__cell{
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.38;
+        color: $color2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  &__row{
+    @extend .flexbox;
+    @extend .align-center;
+  }
+  &__cell{
+    display:block;
+    //@extend .flexbox;
+    &-icon{
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 13px;
+      line-height: 1;
+      color: $color5;
+      cursor: pointer;
+      &_revert{
+        transform: rotate(-180deg);
+      }
+      &-download{
+        margin-left:10px;
+      }
+    }
+  }
+
+  &__photographers{
+    .#{$block} {
+      &__body{
+        .#{$block} {
+          &__cell{
+            &:nth-of-type(7){
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+      &__cell{
+        &:first-child{
+          padding-left: 29px;
+        }
+        &:nth-of-type(1){
+          width: 18%;
+        }
+        &:nth-of-type(2){
+          width: 25.8%;
+        }
+        &:nth-of-type(3){
+          width: 16.8%;
+        }
+        &:nth-of-type(4){
+          width: 14.4%;
+        }
+        &:nth-of-type(5){
+          width: 12.2%;
+        }
+        &:nth-of-type(6){
+          text-align: right;
+          width: 11.2%;
+          padding-right: 50px;
+        }
+        &:nth-of-type(7){
+          flex:1 1 5%;
+          width: 5%;
+        }
+      }
+    }
+  }
+  &__billing{
+    .#{$block} {
+      &__body{
+        padding-bottom: 8px;
+        .#{$block} {
+          &__cell{
+            padding-top: 6px;
+          }
+        }
+      }
+      &__header{
+        .#{$block} {
+          &__cell{
+            padding-top: 9px;
+          }
+        }
+      }
+      &__cell{
+        &:first-child{
+          padding-left: 31px;
+        }
+        &:last-child{
+          padding-right: 5px;
+        }
+        &:nth-of-type(1){
+          width: 13.5%;
+
+        }
+        &:nth-of-type(2){
+          width: 10.8%;
+        }
+        &:nth-of-type(3){
+          width: 26.1%;
+        }
+        &:nth-of-type(4){
+          width: 15.7%;
+        }
+        &:nth-of-type(5){
+          text-align: right;
+          width: 11.7%;
+          padding-right: 70px;
+        }
+        &:nth-of-type(6){
+          text-align: right;
+          width: 13%;
+          padding-right: 80px;
+        }
+        &:nth-of-type(7){
+          flex:1 1 6%;
+          width: 6%;
+        }
+      }
+    }
+  }
+  &__sessions{
+    .#{$block} {
+
+      &__header{
+        .#{$block} {
+          &__row{
+            &:hover{
+              position: static;
+              box-shadow: none;
+              cursor: inherit;
+            }
+          }
+        }
+      }
+      &__row{
+        &:hover{
+          box-shadow: 0 2px 19px 0 rgba(10, 45, 61, 0.21);
+          position: relative;
+          z-index: 1;
+          cursor: pointer;
+        }
+        
+      }
+      &__cell{
+        &:first-child{
+          padding-left: 31px;
+        }
+        &:nth-of-type(1){
+          width: 13.4%;
+        }
+        &:nth-of-type(2){
+          width: 19.6%;
+        }
+        &:nth-of-type(3){
+          width: 10.7%;
+        }
+        &:nth-of-type(4){
+          width: 15.7%;
+        }
+        &:nth-of-type(5){
+          width: 24.6%;
+        }
+        &:nth-of-type(6){
+          flex:1 1 6%;
+          width: 12%;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}

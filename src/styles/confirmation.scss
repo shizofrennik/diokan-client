@@ -1,0 +1,42 @@
+$block: diokan-confirmation;
+
+
+.#{$block} {
+  display: inline-block;
+  &__note{
+    padding-left: 47px;
+    font-size: 16px;
+    line-height: 1.38;
+    color: $color5;
+  }
+  &-list{
+    &-group{
+      margin-bottom: 30px;
+    }
+    &__item{
+      .diokan-custom-input__checkbox{
+        height: 22px;
+        width: 22px;
+        margin-right: 12px;
+        &:before{
+          color: $color6;
+          font-size: 18px;
+          line-height: 1.22;
+        }
+      }
+      .diokan-form-label{
+        font-size: 18px;
+        color: $color20;
+        font-weight: 400;
+      }
+      &-note{
+        margin-top: 5px;
+        padding-left: 34px;
+        font-size: 16px;
+        line-height: 1.38;
+        color: $color21;
+      }
+    }
+
+  }
+}

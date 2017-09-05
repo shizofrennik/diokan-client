@@ -1,0 +1,43 @@
+#lightboxBackdrop{
+    [class*="close_"]{
+        position: absolute;
+        right: -50px;
+        top: 30px;
+        left: inherit;
+        svg{
+            display: none;
+        }
+        &:before{
+            content: url('./images/icon-close-white.svg');
+        }
+        &:hover{
+            &:before{
+                opacity:0.6;
+            }
+        }
+    }
+    [class*="arrow_"]{
+        background:transparent;
+        svg{
+            display:none !important;
+        }
+        &:before{
+            content: '';
+            display:block;
+            width:20px;
+            height:40px;
+            background: url('./images/icon-arrow-white.svg') no-repeat transparent;
+        }
+        &:hover{
+            &:before{
+                opacity:1;
+            }
+        }
+    }
+    [class*="_right"]{
+        &:before{
+            transform: rotate(180deg);
+        }
+    }
+}
+ 

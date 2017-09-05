@@ -1,0 +1,38 @@
+$block: diokan-news;
+
+.#{$block} {
+  height: 100%;
+  @extend .diokan-content-block;
+  padding: 21px 38px 30px 31px;
+  &-inner{
+    .slick-list{
+      margin-bottom: 49px;
+    }
+  }
+  &__header{
+    @extend .flexbox;
+    @extend .align-end;
+    @extend .justify-between;
+    margin-bottom: 19px;
+  }
+  &__item{
+    &-image{
+      margin-bottom: 14px;
+    }
+  }
+  &-list{
+    &__item{
+      margin-bottom: 32px;
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+      &-description{
+        margin-bottom: 7px;
+        p{
+          @extend .diokan-content-text;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
