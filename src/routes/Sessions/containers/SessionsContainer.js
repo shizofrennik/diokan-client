@@ -77,7 +77,7 @@ class SessionsContainer extends React.Component {
             {moment(session.date).format('DD-MMM-YYYY')}
           </div>
           <div className="diokan-table__cell">
-            {session.users.length ? session.users[0].name : ''}
+            {this.props.currentUser.name}
           </div>
           <div className="diokan-table__cell">
             #{session.photo_start} - {session.photo_end}
@@ -86,10 +86,10 @@ class SessionsContainer extends React.Component {
             Photos sent to client
           </div>
           <div className="diokan-table__cell">
-            {session.users.length ? session.users[0].email : ''}
+            {this.props.currentUser.email}
           </div>
           <div className="diokan-table__cell">
-            {session.users.length ? session.users[0].phone : ''}
+            {this.props.currentUser.phone}
           </div>
         </Link>
       )
@@ -241,6 +241,7 @@ const mapStateToProps = (state, props) => {
     sessions: state.sessions.sessions,
     filters: state.sessions.filters,
     fetching: state.sessions.fetchingSessions,
+    currentUser: state.user.currentUser
   })
 };
 

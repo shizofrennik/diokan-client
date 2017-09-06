@@ -6,7 +6,6 @@ import {Link} from 'react-router';
 import {getSession, removeSelectedSession} from 'store/sessions';
 import moment from 'moment';
 import Spinner from 'components/Spinner';
-import {browserHistory} from 'react-router'
 import GalleryItem from 'components/GalleryItem';
 import Lightbox from 'react-images';
 
@@ -24,8 +23,6 @@ class PreviewContainer extends React.Component {
     this.gotoPrevious = this.gotoPrevious.bind(this);
     this.handleClickImage = this.handleClickImage.bind(this);
     this.gotoImage = this.gotoImage.bind(this);
-
-    this.handleDeleteSession = this.handleDeleteSession.bind(this)
   }
   
   componentWillMount() {
@@ -75,11 +72,6 @@ class PreviewContainer extends React.Component {
     this.gotoNext();
   }
 
-  handleDeleteSession() {
-    let {destroySession, session} = this.props;
-    destroySession(session.id).then(() => browserHistory.push(`/sessions`));
-  }
-
   getImages(files) {
     return files.map((file, index) => {
       return (
@@ -92,46 +84,42 @@ class PreviewContainer extends React.Component {
   }
 
   getContacts() {
-    let {users} = this.props.session;
-    if(!users.length) return null;
-
-    return users.map(user => {
-      return (<Col md={4} key={user.id} style={users.length > 3 ? {marginBottom: "20px"} : {}}>
-        <div className="diokan-card-info">
-          <div className="diokan-card-info-group">
-            <div className="diokan-card-info-email">
-              <span
-                className="diokan-card-info-icon diokan-card-info-icon__message">
-                  <i className="fa fa-user" aria-hidden="true" />
-              </span>
-              {user.name ? user.name : '-'}
-            </div>
-          </div>
-          <div className="diokan-card-info-group">
-            <div className="diokan-card-info-email">
-              <span
-                className="diokan-card-info-icon diokan-card-info-icon__message">
-                  <i className="fa fa-envelope" aria-hidden="true" />
-              </span>
-              {user.email ? user.email : '-'}
-            </div>
-          </div>
-          <div className="diokan-card-info-group">
-            <div className="diokan-card-info-phone">
-              <span
-                className="diokan-card-info-icon diokan-card-info-icon__phone">
-                  <i className="fa fa-phone" aria-hidden="true" />
-              </span>
-              {user.phone ? user.phone : '-'}
-            </div>
+    let {currentUser} = this.props;
+    return (<Col md={4}>
+      <div className="diokan-card-info">
+        <div className="diokan-card-info-group">
+          <div className="diokan-card-info-email">
+            <span
+              className="diokan-card-info-icon diokan-card-info-icon__message">
+                <i className="fa fa-user" aria-hidden="true" />
+            </span>
+            {currentUser.name}
           </div>
         </div>
-      </Col>)
-    });
+        <div className="diokan-card-info-group">
+          <div className="diokan-card-info-email">
+            <span
+              className="diokan-card-info-icon diokan-card-info-icon__message">
+                <i className="fa fa-envelope" aria-hidden="true" />
+            </span>
+            {currentUser.email}
+          </div>
+        </div>
+        <div className="diokan-card-info-group">
+          <div className="diokan-card-info-phone">
+            <span
+              className="diokan-card-info-icon diokan-card-info-icon__phone">
+                <i className="fa fa-phone" aria-hidden="true" />
+            </span>
+            {currentUser.phone}
+          </div>
+        </div>
+      </div>
+    </Col>)
   }
 
   render() {
-    let {session} = this.props;
+    let {session, currentUser} = this.props;
     let {lightboxIsOpen, currentImage} = this.state;
     return (
       <div>
@@ -173,9 +161,6 @@ class PreviewContainer extends React.Component {
                 </span>
                     Back to all sessions
                   </Link>
-                  <Link to={`/sessions/edit/${session.id}`} className="diokan-btn diokan-btn-primary">
-                    Edit session
-                  </Link>
                 </div>
               </div>
               <div className="diokan-sessions__content">
@@ -185,7 +170,7 @@ class PreviewContainer extends React.Component {
                       <div className="diokan-card-info">
                         <div className="diokan-card-info-group">
                           <div className="diokan-card-info-name">
-                            {session.users.length ? session.users[0].name : 'Client'}
+                            {currentUser.name}
                           </div>
                           <div className="diokan-card-info-id">
                             {`#${session.photo_start}-${session.photo_end}`}
@@ -237,11 +222,6 @@ class PreviewContainer extends React.Component {
                     width={1980}
                   />
                 </div>
-                <button
-                  onClick={this.handleDeleteSession}
-                  className="diokan-btn diokan-btn-link diokan-btn-link__underline diokan-btn-link__remove">
-                  Delete Session
-                </button>
                 {/*<div className="diokan-form-action diokan-form-action__submit">
                  <div className="diokan-form-action__header">
                  <h4 className="diokan-title-primary_sub">
@@ -276,15 +256,15 @@ class PreviewContainer extends React.Component {
 
 const mapStateToProps = (state, props) => {
   return ({
-    session: state.sessions.selectedSession
+    session: state.sessions.selectedSession,
+    currentUser: state.user.currentUser
   })
 };
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     getSession,
-    removeSelectedSession,
-    destroySession
+    removeSelectedSession
   }, dispatch);
 };
 

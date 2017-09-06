@@ -60,7 +60,7 @@ export function fetchSession(id) {
   }
   
   return axios.post(API_URL, {
-    query: 'query Session($id:ID!) { user_photo_session (id:$id) { id date photo_start photo_end location session_photos { id } }}',
+    query: 'query Session($id:ID!) { user_photo_session (id:$id) { id date photo_start photo_end location session_photos { id file_url thumbnail_url mediumsize_url largesize_url smallsize_url } }}',
     variables: { id }
   }).then(resp => resp.data);
 }
